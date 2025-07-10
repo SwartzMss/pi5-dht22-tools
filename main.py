@@ -11,11 +11,17 @@ def main():
 
     reader = DHT22Reader(pin=args.pin)
 
-    for humidity, temperature in reader.loop(interval=args.interval):
-        if humidity is not None and temperature is not None:
-            print(f"Temp={temperature:.1f}°C  Humidity={humidity:.1f}%")
-        else:
-            print("Failed to retrieve data from sensor")
+    print("Starting reading DHT22 (Ctrl+C to stop)")
+    try:
+        for humidity, temperature in reader.loop(interval=args.interval):
+            if humidity is not None and temperature is not None:
+                print(f"Temp={temperature:.1f}°C  Humidity={humidity:.1f}%")
+            else:
+                print("Failed to retrieve data from sensor")
+    except KeyboardInterrupt:
+        print("\nExit program")
+    finally:
+        reader.exit()
 
 
 if __name__ == '__main__':
