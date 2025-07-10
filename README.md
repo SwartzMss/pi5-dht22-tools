@@ -3,9 +3,12 @@
 使用树莓派 Pi5 读取 DHT22 温湿度传感器数据的示例脚本。
 
 ## 环境准备
-1. 安装依赖（需要在系统中安装 `pip`）：
+1. 推荐使用虚拟环境管理依赖：
    ```bash
-   pip install Adafruit_DHT
+   python3 -m venv .venv
+   source .venv/bin/activate
+   pip install -U pip
+   pip install lgpio adafruit-circuitpython-dht
    ```
 2. 将 DHT22 按以下方式连接至树莓派：
    - VCC 接 3.3V（例如针脚 1）
