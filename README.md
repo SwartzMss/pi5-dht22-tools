@@ -7,7 +7,6 @@
    ```bash
    python3 -m venv .venv
    source .venv/bin/activate
-   pip install -U pip
    pip install lgpio adafruit-circuitpython-dht
    ```
 2. 将 DHT22 按以下方式连接至树莓派：
