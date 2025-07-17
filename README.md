@@ -20,7 +20,7 @@
 ## 运行脚本
 运行脚本（持续读取）：
 ```bash
-python3 main.py --pin 4
+python3 main.py --pin 26
 ```
 
 可通过 `--interval` 指定读取间隔（秒），`--pin` 指定传感器连接的 GPIO 引脚。
